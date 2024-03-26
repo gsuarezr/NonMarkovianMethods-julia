@@ -1,6 +1,6 @@
 
 using QuadGK
-
+using QuantumToolbox
 struct cumulant
     Hsys
     t::Float64
@@ -49,4 +49,5 @@ function gamma(ν,w,w1,bath,t)
     return var
 end;
 
-decay(w,w1,bath,t)=quadgk(ν -> gamma(ν,w,w1,bath,t), 0, Inf, rtol=1e-6,atol=1e-6)[1]
+decay(w,w1,bath,t)=quadgk(ν -> gamma(ν,w,w1,bath,t), 0, Inf, rtol=1e-7,atol=1e-7)[1]
+
